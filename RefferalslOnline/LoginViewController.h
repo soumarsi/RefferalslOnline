@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  LoginViewController.h
 //  RefferalslOnline
 //
 //  Created by anirban on 21/05/15.
@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface LoginViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *mainView;
-- (IBAction)SignUp:(id)sender;
-- (IBAction)loginNew:(id)sender;
-
+- (IBAction)goSignin:(id)sender;
+- (IBAction)goback:(id)sender;
+- (IBAction)login:(id)sender;
 
 @end
-

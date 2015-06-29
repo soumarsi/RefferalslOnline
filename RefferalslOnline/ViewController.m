@@ -24,4 +24,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)SignUp:(id)sender {
+    
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewController *dest = [storyboard instantiateViewControllerWithIdentifier:@"signup"];
+    [self.navigationController pushViewController:dest animated:NO];
+}
+
+
+- (IBAction)loginNew:(id)sender {
+    
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewController *dest = [storyboard instantiateViewControllerWithIdentifier:@"login"];
+    [self.navigationController pushViewController:dest animated:NO];
+    
+}
 @end
