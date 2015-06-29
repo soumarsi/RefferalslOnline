@@ -7,7 +7,8 @@
 //
 
 #import "SignupViewController.h"
-
+#import "RefferalsOnline-Prefix.pch"
+#import "NSString+globalClass.h"
 @interface SignupViewController ()<UIAlertViewDelegate>
 
 @end
@@ -79,7 +80,7 @@
         
         NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:[NSOperationQueue mainQueue]];
         
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://esolz.co.in/lab6/Referralonline/app_user_registration?firstname=%@&lastname=%@&email=%@&password=%@",self.firstName.text,self.lastName.text,self.username.text,self.password.text]];
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@app_user_registration?firstname=%@&lastname=%@&email=%@&password=%@",[NSString domain_Url],self.firstName.text,self.lastName.text,self.username.text,self.password.text]];
         NSURLSessionDataTask * dataTask = [defaultSession dataTaskWithURL:url
                                                         completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             

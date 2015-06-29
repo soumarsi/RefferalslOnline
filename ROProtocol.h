@@ -8,8 +8,8 @@
 //
 //#import <Foundation/Foundation.h>
 //
-//@interface ROProtocol : NSObject
+//@protocol ROProtocol <NSObject>
 //
-//typedef void(^URLResponseBlock)(id result, NSError *error);
+//typedef void(^Urlresponceblock)(id result, NSError *error);
 //
 //@end

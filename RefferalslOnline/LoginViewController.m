@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import "RefferalsOnline-Prefix.pch"
-
+#import "NSString+globalClass.h"
 @interface LoginViewController ()
 
 @end
@@ -67,12 +67,12 @@
         
     }else{
         
-//        --------------- GET Method-----------  //
+        //--------------- GET Method-----------  //
         
         NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
         NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: self delegateQueue: [NSOperationQueue mainQueue]];
         
-        NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"%@email=%@&password=%@",Login_Url,self.username.text,self.password.text]];
+        NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"%@email=%@&password=%@",[NSString login_Url],self.username.text,self.password.text]];
         
         NSURLSessionDataTask * dataTask = [defaultSession dataTaskWithURL:url
                                                         completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -100,53 +100,6 @@
                                                         }];
         
         [dataTask resume];
-        
-        //---------------- POST Method-------------//
-        
-//        NSError *error;
-//        
-//        //------- 1: Creating configuration and session ------//
-//        
-//        NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-//        NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration delegate:self delegateQueue:nil];
-//        
-//        //------- 2: API Firing --------//
-//        
-//        NSURL *api = [NSURL URLWithString:[NSString stringWithFormat:@"http://esolz.co.in/lab6/Referralonline/login/verify_app_login?"]];
-//        
-//        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:api
-//                                                               cachePolicy:NSURLRequestUseProtocolCachePolicy
-//                                                           timeoutInterval:60.0];
-//        
-//        [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-//        [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
-//        [request setHTTPMethod:@"PUT"];
-//        
-//        //-------- 3: Appending data & getting response -------//
-//        
-//        NSDictionary *loginData = [[NSDictionary alloc] initWithObjectsAndKeys: @"email", self.username.text,
-//                                 @"password", self.password.text,
-//                                 nil];
-//        NSData *postData = [NSJSONSerialization dataWithJSONObject:loginData options:0 error:&error];
-//        [request setHTTPBody:postData];
-//        
-//        
-//        if (!error) {
-//        
-//        NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-//            
-//            DLog(@"RESPONSE-------> %@",response);
-//            DLog(@"DATA RETURN---->%@",data);
-//            
-//            
-//        }];
-//        
-//        [postDataTask resume];
-//            
-//        }
-        
-        //------------------- :::: -------------------//
-        
         
     }
     

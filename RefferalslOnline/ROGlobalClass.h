@@ -9,8 +9,13 @@
 //#import <Foundation/Foundation.h>
 //#import "ROProtocol.h"
 //
-//@interface ROGlobalClass : NSObject<NSURLSessionDownloadDelegate,NSURLSessionTaskDelegate,NSURLSessionDataDelegate,NSURLSessionDelegate>
 //
-//-(void)GlobalDict:(NSString *)parameter WithBlock:(URLResponseBlock)response;
+//@interface ROGlobalClass : NSObject<NSURLSessionTaskDelegate,NSURLSessionDataDelegate,NSURLSessionDelegate>{
+//    
+//    
+//    NSDictionary *dictionary;
+//}
+//
+//-(void)GlobalDict:(NSString *)parameter Withblock:(Urlresponceblock)responce;
 //
 //@end

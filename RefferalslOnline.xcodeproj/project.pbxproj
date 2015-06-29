@@ -14,24 +14,14 @@
 		5AC7C2031B0DED1E00B34945 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AC7C2011B0DED1E00B34945 /* Main.storyboard */; };
 		5AC7C2051B0DED1E00B34945 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AC7C2041B0DED1E00B34945 /* Images.xcassets */; };
 		5AC7C2081B0DED1E00B34945 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AC7C2061B0DED1E00B34945 /* LaunchScreen.xib */; };
-		5AC7C2141B0DED1E00B34945 /* RefferalslOnlineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC7C2131B0DED1E00B34945 /* RefferalslOnlineTests.m */; };
 		5AC7C21F1B0DF3F100B34945 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC7C21E1B0DF3F100B34945 /* LoginViewController.m */; };
 		5AC7C2221B0E12A400B34945 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC7C2211B0E12A400B34945 /* SignupViewController.m */; };
 		5AC7C2261B0F01B600B34945 /* header.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AC7C2251B0F01B600B34945 /* header.xib */; };
 		5AC7C2291B0F0BEC00B34945 /* header.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC7C2281B0F0BEC00B34945 /* header.m */; };
 		5AC7C22C1B0F0C4100B34945 /* DashBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC7C22B1B0F0C4100B34945 /* DashBoardViewController.m */; };
 		BED62DA01B411F3500CD051D /* ROGlobalClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BED62D9F1B411F3500CD051D /* ROGlobalClass.m */; };
+		BED62DB21B417C8500CD051D /* NSString+globalClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BED62DB11B417C8500CD051D /* NSString+globalClass.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		5AC7C20E1B0DED1E00B34945 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5AC7C1E91B0DED1E00B34945 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5AC7C1F01B0DED1E00B34945;
-			remoteInfo = RefferalslOnline;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5AC7C1F11B0DED1E00B34945 /* RefferalslOnline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RefferalslOnline.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,7 +35,6 @@
 		5AC7C2021B0DED1E00B34945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5AC7C2041B0DED1E00B34945 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5AC7C2071B0DED1E00B34945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		5AC7C20D1B0DED1E00B34945 /* RefferalslOnlineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RefferalslOnlineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC7C2121B0DED1E00B34945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AC7C2131B0DED1E00B34945 /* RefferalslOnlineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefferalslOnlineTests.m; sourceTree = "<group>"; };
 		5AC7C21D1B0DF3F100B34945 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -59,19 +48,14 @@
 		5AC7C22B1B0F0C4100B34945 /* DashBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardViewController.m; sourceTree = "<group>"; };
 		BED62D9E1B411F3500CD051D /* ROGlobalClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROGlobalClass.h; sourceTree = "<group>"; };
 		BED62D9F1B411F3500CD051D /* ROGlobalClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROGlobalClass.m; sourceTree = "<group>"; };
-		BED62DA21B41260600CD051D /* ROProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROProtocol.h; sourceTree = "<group>"; };
 		BED62DA51B413AB100CD051D /* RefferalsOnline-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RefferalsOnline-Prefix.pch"; sourceTree = "<group>"; };
+		BED62DB01B417C8500CD051D /* NSString+globalClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+globalClass.h"; sourceTree = "<group>"; };
+		BED62DB11B417C8500CD051D /* NSString+globalClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+globalClass.m"; sourceTree = "<group>"; };
+		BED62DB31B4184CF00CD051D /* ROProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5AC7C1EE1B0DED1E00B34945 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5AC7C20A1B0DED1E00B34945 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -95,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				5AC7C1F11B0DED1E00B34945 /* RefferalslOnline.app */,
-				5AC7C20D1B0DED1E00B34945 /* RefferalslOnlineTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,6 +86,7 @@
 		5AC7C1F31B0DED1E00B34945 /* RefferalslOnline */ = {
 			isa = PBXGroup;
 			children = (
+				BED62DAC1B417BB900CD051D /* Category */,
 				BED62D9D1B411E8900CD051D /* Global */,
 				5AC7C2241B0F016200B34945 /* Classes */,
 				5AC7C2231B0F013100B34945 /* Views */,
@@ -181,9 +165,18 @@
 		BED62DA11B4125B600CD051D /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				BED62DA21B41260600CD051D /* ROProtocol.h */,
+				BED62DB31B4184CF00CD051D /* ROProtocol.h */,
 			);
 			name = Protocol;
+			sourceTree = "<group>";
+		};
+		BED62DAC1B417BB900CD051D /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				BED62DB01B417C8500CD051D /* NSString+globalClass.h */,
+				BED62DB11B417C8500CD051D /* NSString+globalClass.m */,
+			);
+			name = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,24 +199,6 @@
 			productReference = 5AC7C1F11B0DED1E00B34945 /* RefferalslOnline.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5AC7C20C1B0DED1E00B34945 /* RefferalslOnlineTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5AC7C21A1B0DED1E00B34945 /* Build configuration list for PBXNativeTarget "RefferalslOnlineTests" */;
-			buildPhases = (
-				5AC7C2091B0DED1E00B34945 /* Sources */,
-				5AC7C20A1B0DED1E00B34945 /* Frameworks */,
-				5AC7C20B1B0DED1E00B34945 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5AC7C20F1B0DED1E00B34945 /* PBXTargetDependency */,
-			);
-			name = RefferalslOnlineTests;
-			productName = RefferalslOnlineTests;
-			productReference = 5AC7C20D1B0DED1E00B34945 /* RefferalslOnlineTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -235,10 +210,6 @@
 				TargetAttributes = {
 					5AC7C1F01B0DED1E00B34945 = {
 						CreatedOnToolsVersion = 6.3;
-					};
-					5AC7C20C1B0DED1E00B34945 = {
-						CreatedOnToolsVersion = 6.3;
-						TestTargetID = 5AC7C1F01B0DED1E00B34945;
 					};
 				};
 			};
@@ -256,7 +227,6 @@
 			projectRoot = "";
 			targets = (
 				5AC7C1F01B0DED1E00B34945 /* RefferalslOnline */,
-				5AC7C20C1B0DED1E00B34945 /* RefferalslOnlineTests */,
 			);
 		};
 /* End PBXProject section */
@@ -273,13 +243,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5AC7C20B1B0DED1E00B34945 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -288,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AC7C2221B0E12A400B34945 /* SignupViewController.m in Sources */,
+				BED62DB21B417C8500CD051D /* NSString+globalClass.m in Sources */,
 				5AC7C1FA1B0DED1E00B34945 /* AppDelegate.m in Sources */,
 				5AC7C1F71B0DED1E00B34945 /* main.m in Sources */,
 				5AC7C22C1B0F0C4100B34945 /* DashBoardViewController.m in Sources */,
@@ -299,23 +263,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5AC7C2091B0DED1E00B34945 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5AC7C2141B0DED1E00B34945 /* RefferalslOnlineTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		5AC7C20F1B0DED1E00B34945 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5AC7C1F01B0DED1E00B34945 /* RefferalslOnline */;
-			targetProxy = 5AC7C20E1B0DED1E00B34945 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5AC7C2011B0DED1E00B34945 /* Main.storyboard */ = {
@@ -447,40 +395,6 @@
 			};
 			name = Release;
 		};
-		5AC7C21B1B0DED1E00B34945 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = RefferalslOnlineTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RefferalslOnline.app/RefferalslOnline";
-			};
-			name = Debug;
-		};
-		5AC7C21C1B0DED1E00B34945 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = RefferalslOnlineTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RefferalslOnline.app/RefferalslOnline";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -498,15 +412,6 @@
 			buildConfigurations = (
 				5AC7C2181B0DED1E00B34945 /* Debug */,
 				5AC7C2191B0DED1E00B34945 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5AC7C21A1B0DED1E00B34945 /* Build configuration list for PBXNativeTarget "RefferalslOnlineTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5AC7C21B1B0DED1E00B34945 /* Debug */,
-				5AC7C21C1B0DED1E00B34945 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

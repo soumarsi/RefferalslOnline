@@ -10,44 +10,57 @@
 //
 //@implementation ROGlobalClass{
 //    
-//    URLResponseBlock _response;
+//    Urlresponceblock _responce;
 //    
 //}
-//-(void)GlobalDict:(NSString *)parameter Withblock:(URLResponseBlock)responce 
+//-(void)GlobalDict:(NSString *)parameter Withblock:(Urlresponceblock)responce
 //{
 //    
 //    DLog(@"URL---- %@",parameter);
 //    
-//    NSError *error;
+//    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
 //    
-//    //------- 1: Creating configuration and session ------//
+//    NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:[NSOperationQueue mainQueue]];
 //    
-//    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-//    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration delegate:self delegateQueue:nil];
+//    NSURL *url = [NSURL URLWithString:parameter];
+//    NSURLSessionDataTask * dataTask = [defaultSession dataTaskWithURL:url
+//                                                    completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//                                                        
+////                                                        if(error == nil)
+////                                                        {
+////                                                            NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+////    
+////                                                        }
+//                                                    }];
 //    
-//    //------- 2: API Firing --------//
+//    [dataTask resume];
 //    
-//    NSURL *api = [NSURL URLWithString:parameter];
-//    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:api
-//                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
-//                                                       timeoutInterval:60.0];
-//
-//    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-//    [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
-//    [request setHTTPMethod:@"POST"];
-//    
-//    NSDictionary *profiledict = @{@"email": [User currentUser].profile_id,@"reported_profile_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"otherProfileId"],@"reason":viewRep.textView.text};
-//    
-//    NSData *postData = [NSJSONSerialization dataWithJSONObject:profiledict options:0 error:&error];
-//    [request setHTTPBody:postData];
-//    
-//    
-//    NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
-//        
-//        
-//        
-//    }];
+//    _responce=[responce copy];
 //    
 //}
+//- (void)connection:(NSURLConnection*)connection didReceiveResponse:(NSURLResponse *)response
+//{
+//    dictionary = [[NSDictionary alloc]init];
+//}
+//- (void)connection:(NSURLConnection*)connection didReceiveData:(NSData*)data
+//{
+////    [dictionary appendData:data];
+//}
+//- (void)connection:(NSURLConnection*)connection didFailWithError:(NSError*)error
+//{
+//    NSLog(@"Did Fail");
+//}
+//- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+//{
+//    //   id result=[NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:nil];
+//    //   _responce(result,nil);
+//    
+//        DLog(@"GLOBAL CLASS ELSE------");
+//        id result=[NSJSONSerialization JSONObjectWithData:dictionary options:kNilOptions error:nil];
+//        _responce(result,nil);
+//        
+//    
+//}
+//
 //
 //@end
