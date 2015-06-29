@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SignupViewController : UIViewController
+@interface SignupViewController : UIViewController<NSURLSessionDataDelegate,NSURLSessionDelegate,NSURLSessionTaskDelegate>
+
+@property (strong, nonatomic) IBOutlet UITextField *firstName;
+@property (strong, nonatomic) IBOutlet UITextField *lastName;
+@property (strong, nonatomic) IBOutlet UITextField *username;
+@property (strong, nonatomic) IBOutlet UITextField *password;
+@property (strong, nonatomic) UIAlertView *alert;
+
 - (IBAction)goLogin:(id)sender;
 - (IBAction)goback:(id)sender;
+- (IBAction)signup:(id)sender;
+
 
 @end

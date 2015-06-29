@@ -8,7 +8,7 @@
 
 #import "SignupViewController.h"
 
-@interface SignupViewController ()
+@interface SignupViewController ()<UIAlertViewDelegate>
 
 @end
 
@@ -44,7 +44,88 @@
 
 - (IBAction)goback:(id)sender {
     
-    
     [self.navigationController popViewControllerAnimated:NO];
+}
+
+- (IBAction)signup:(id)sender {
+    
+    if (self.firstName.text == 0 || [self.firstName.text isEqualToString:@""]) {
+        
+        self.alert = [[UIAlertView alloc]initWithTitle:nil message:@"First name cannot be blank" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        
+        [self.alert show];
+        
+    }else if (self.lastName.text == 0 || [self.lastName.text isEqualToString:@""]){
+        
+        self.alert = [[UIAlertView alloc]initWithTitle:nil message:@"Last name cannot be blank" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        
+        [self.alert show];
+        
+    }else if (self.username.text == 0 || [self.username.text isEqualToString:@""]){
+        
+        self.alert = [[UIAlertView alloc]initWithTitle:nil message:@"Username cannot be blank" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        
+        [self.alert show];
+        
+    }else if (self.password.text == 0 || [self.password.text isEqualToString:@""]){
+        
+        self.alert = [[UIAlertView alloc]initWithTitle:nil message:@"Password cannot be blank" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        
+        [self.alert show];
+        
+    }else{
+        
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        
+        NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+        
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://esolz.co.in/lab6/Referralonline/app_user_registration?firstname=%@&lastname=%@&email=%@&password=%@",self.firstName.text,self.lastName.text,self.username.text,self.password.text]];
+        NSURLSessionDataTask * dataTask = [defaultSession dataTaskWithURL:url
+                                                        completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            
+            if(error == nil)
+            {
+                NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+                
+                DLog(@"RETURN DATA------> %@",dictionary);
+                
+                if ([[dictionary objectForKey:@"response"] isEqualToString:@"success"]) {
+                    
+                    self.alert = [[UIAlertView alloc]initWithTitle:nil message:@"Please check your confirmation mail" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                    
+                    [self.alert show];
+                    
+                }else{
+                    
+                    self.alert = [[UIAlertView alloc]initWithTitle:nil message:@"Please check your Username or Password" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                    
+                    [self.alert show];
+                    
+                }
+            }
+            
+        }];
+        
+         [dataTask resume];
+        
+    }
+    
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    if (buttonIndex == [alertView cancelButtonIndex]){
+        //cancel clicked ...do your action
+        DLog(@"NO PRESSED---------->");
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        SignupViewController *navTo = [storyboard instantiateViewControllerWithIdentifier:@"login"];
+        [self.navigationController pushViewController:navTo animated:NO];
+        
+    }
+    
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
 }
 @end
