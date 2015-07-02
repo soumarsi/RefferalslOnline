@@ -51,7 +51,6 @@
 		BED62DA51B413AB100CD051D /* RefferalsOnline-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RefferalsOnline-Prefix.pch"; sourceTree = "<group>"; };
 		BED62DB01B417C8500CD051D /* NSString+globalClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+globalClass.h"; sourceTree = "<group>"; };
 		BED62DB11B417C8500CD051D /* NSString+globalClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+globalClass.m"; sourceTree = "<group>"; };
-		BED62DB31B4184CF00CD051D /* ROProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +67,6 @@
 		5AC7C1E81B0DED1E00B34945 = {
 			isa = PBXGroup;
 			children = (
-				BED62DA11B4125B600CD051D /* Protocol */,
 				5AC7C1F31B0DED1E00B34945 /* RefferalslOnline */,
 				5AC7C2101B0DED1E00B34945 /* RefferalslOnlineTests */,
 				5AC7C1F21B0DED1E00B34945 /* Products */,
@@ -160,14 +158,6 @@
 				BED62D9F1B411F3500CD051D /* ROGlobalClass.m */,
 			);
 			name = Global;
-			sourceTree = "<group>";
-		};
-		BED62DA11B4125B600CD051D /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				BED62DB31B4184CF00CD051D /* ROProtocol.h */,
-			);
-			name = Protocol;
 			sourceTree = "<group>";
 		};
 		BED62DAC1B417BB900CD051D /* Category */ = {
