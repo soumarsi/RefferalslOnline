@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "RefferalsOnline-Prefix.pch"
+#import <FacebookSDK/FacebookSDK.h>
+#import "AppDelegate.h"
+#import "DashBoardViewController.h"
 
 @interface LoginViewController : UIViewController<UIAlertViewDelegate,NSURLSessionDataDelegate,NSURLSessionDelegate,NSURLSessionTaskDelegate>
 
@@ -20,6 +23,10 @@
 - (IBAction)goSignin:(id)sender;
 - (IBAction)goback:(id)sender;
 - (IBAction)login:(id)sender;
+- (IBAction)FbLogin:(id)sender;
+
+-(void)openActiveSessionWithPermissions:(NSArray *)permissions allowLoginUI:(BOOL)allowLoginUI;
+
 
 
 

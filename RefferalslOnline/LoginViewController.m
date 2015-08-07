@@ -10,15 +10,90 @@
 #import "RefferalsOnline-Prefix.pch"
 #import "NSString+globalClass.h"
 @interface LoginViewController ()
-
+@property (nonatomic, strong) AppDelegate *appDelegate;
 @end
 
 @implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleFBSessionStateChangeWithNotification:) name:@"SessionStateChangeNotification" object:nil];
+    
+    
     // Do any additional setup after loading the view.
 }
+
+
+
+-(void)handleFBSessionStateChangeWithNotification:(NSNotification *)notification{
+    // Get the session, state and error values from the notification's userInfo dictionary.
+    NSDictionary *userInfo = [notification userInfo];
+    
+    FBSessionState sessionState = [[userInfo objectForKey:@"state"] integerValue];
+    NSError *error = [userInfo objectForKey:@"error"];
+    NSLog(@"session %lu",(unsigned long)sessionState);
+    
+    
+    // Handle the session state.
+    // Usually, the only interesting states are the opened session, the closed session and the failed login.
+    if (!error) {
+        // In case that there's not any error, then check if the session opened or closed.
+        if (sessionState == FBSessionStateOpen) {
+            // The session is open. Get the user information and update the UI.
+            [FBRequestConnection startWithGraphPath:@"me"
+                                         parameters:@{@"fields": @"first_name, last_name, picture.type(normal), email"}
+                                         HTTPMethod:@"GET"
+                                  completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                                      if (!error) {
+                                          // Set the use full name.
+                                          
+                                          NSLog(@"result.....%@",result);
+                                          DashBoardViewController *home=[[UIStoryboard storyboardWithName:@"Main" bundle:Nil]instantiateViewControllerWithIdentifier:@"dashboard"];
+                                          
+                                          [self.navigationController pushViewController:home animated:YES];
+                                      }
+                                      else{
+                                          NSLog(@"%@", [error localizedDescription]);
+                                      }
+                                  }];
+            
+           
+        }
+        else if (sessionState == FBSessionStateClosed || sessionState == FBSessionStateClosedLoginFailed){
+            
+        }
+    }
+    else{
+        // In case an error has occurred, then just log the error and update the UI accordingly.
+        NSLog(@"Error: %@", [error localizedDescription]);
+        
+        
+    }
+}
+
+-(void)openActiveSessionWithPermissions:(NSArray *)permissions allowLoginUI:(BOOL)allowLoginUI{
+    [FBSession openActiveSessionWithReadPermissions:permissions
+                                       allowLoginUI:allowLoginUI
+                                  completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+                                      
+                                      // Create a NSDictionary object and set the parameter values.
+                                      NSDictionary *sessionStateInfo = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                                                        session, @"session",
+                                                                        [NSNumber numberWithInteger:status], @"state",
+                                                                        error, @"error",
+                                                                        nil];
+                                      
+                                      // Create a new notification, add the sessionStateInfo dictionary to it and post it.
+                                      [[NSNotificationCenter defaultCenter] postNotificationName:@"SessionStateChangeNotification"
+                                                                                          object:nil
+                                                                                        userInfo:sessionStateInfo];
+                                      
+                                  }];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -104,6 +179,37 @@
     }
     
 }
+
+
+
+
+
+- (IBAction)FbLogin:(id)sender
+{
+   
+    if ([FBSession activeSession].state != FBSessionStateOpen &&
+        [FBSession activeSession].state != FBSessionStateOpenTokenExtended) {
+        
+  [self.appDelegate openActiveSessionWithPermissions:@[@"public_profile", @"email"] allowLoginUI:YES];
+       
+    }
+//    else{
+//        // Close an existing session.
+//        [[FBSession activeSession] closeAndClearTokenInformation];
+//        
+//            }
+
+    
+}
+
+
+
+
+
+
+
+
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return NO;
